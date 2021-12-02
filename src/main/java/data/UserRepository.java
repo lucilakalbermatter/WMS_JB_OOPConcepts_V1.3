@@ -1,4 +1,4 @@
-package com.dci.java.data;
+package main.java.data;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -7,11 +7,8 @@ import org.json.simple.JSONValue;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * The Data Repository
@@ -82,7 +79,13 @@ public class UserRepository {
 	}
 	
 	public static boolean isUserEmployee(String name) {
-		//to implement
-	}
+		List<Employee> employees = getAllEmployees();
 
+		for(Employee employee : employees) {
+			if(name.equals(employee.getName())) {
+					return true;
+				}
+			}
+		return false;
+	}
 }

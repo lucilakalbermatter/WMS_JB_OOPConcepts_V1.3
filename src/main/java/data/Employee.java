@@ -8,10 +8,16 @@ public class Employee extends User{
     private final String password;
     private List<Employee> headOf;
 
-    public Employee(String userName, String password) {
+    //Constructor
+    public Employee(String userName, String password, List<Employee>headOf) {
         super(userName);
         this.password = password;
         this.headOf = new ArrayList<Employee>();
+    }
+
+    //GetPassword
+    public String getPassword() {
+        return password;
     }
 
     @Override
@@ -24,6 +30,12 @@ public class Employee extends User{
     }
 
     public void greet(){
-        System.out.println("Hello, " +  + "");
+        System.out.println("Hello, " + super.getName() + " ! \n If you experience a problem with the system, \n please contact technical support." );
     }
+
+    public void bye(List<String> actions){
+       super.bye();
+
+    }
+
 }

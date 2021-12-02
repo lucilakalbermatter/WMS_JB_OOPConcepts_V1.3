@@ -6,8 +6,8 @@ import java.util.List;
 public class Warehouse {
 
     //Properties
-    private final int id;
-    private final List<Item> stock;
+    private int id;
+    private List<Item> stock;
 
     //Constructor
     public Warehouse(int warehouseId) {
@@ -15,22 +15,38 @@ public class Warehouse {
         this.stock = new ArrayList<Item>();
     }
 
+    //Empty constructor
+    public Warehouse() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
     //Methods
-    public int occupancy (){
+    public int occupancy() {
         return stock.size();
     }
 
-    public void addItem (Item newItem){
+    public void addItem(Item newItem) {
         boolean add = stock.add(newItem);
     }
 
-    public List<Item> search (String searchTerm) {
-        for(Item item : stock) {
-            if (item.contains(searchTerm)) {
-                return item;
+    public List<Item> search(String searchTerm) {
+        List<Item> result = new ArrayList<Item>();
+        for (Item item : stock) {
+            if (searchTerm.toLowerCase().equals(item.toString())) {
+                result.add(item);
+
             }
-        }
+        } return result;
+    }
+
+    public List<Item> getStock() {
+        return this.stock;
+    }
 }
+
 
 
 

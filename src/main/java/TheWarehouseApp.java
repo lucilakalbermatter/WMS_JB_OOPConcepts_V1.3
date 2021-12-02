@@ -1,6 +1,9 @@
 package main.java;
 
 public class TheWarehouseApp {
+
+  //Static boolean variable
+  static boolean IS_EMPLOYEE;
   /**
    * Execute the <i>TheWarehouseApp</i>
    *
@@ -26,4 +29,5 @@ public class TheWarehouseApp {
 
     } while (true);
   }
+
 }

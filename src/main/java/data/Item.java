@@ -20,50 +20,59 @@ public class Item {
 	 * The warehouse ID
 	 */
 	private int warehouse;
-	/** 
+	/**
 	 * The date when this item was added to the warehouse
 	 */
 	private Date dateOfStock;
 
 	//Constructor
-	public Item(String state, String category, int warehouse, Date dateOfStock){
+	public Item(String state, String category, int warehouse, Date dateOfStock) {
 		this.state = state;
 		this.category = category;
 		this.dateOfStock = dateOfStock;
 	}
 
+	public Item(){}
+
 	// setters and getters
 	public String getState() {
 		return state;
 	}
+
 	public void setState(String state) {
 		this.state = state;
 	}
+
 	public String getCategory() {
 		return category;
 	}
+
 	public void setCategory(String category) {
 		this.category = category;
 	}
+
 	public int getWarehouse() {
 		return warehouse;
 	}
+
 	public void setWarehouse(int warehouse) {
 		this.warehouse = warehouse;
 	}
+
 	public Date getDateOfStock() {
 		return dateOfStock;
 	}
+
 	public void setDateOfStock(Date dateOfStock) {
 		this.dateOfStock = dateOfStock;
 	}
-	
+
 	/**
-	 * Textual representation of the item. 
+	 * Textual representation of the item.
 	 * It's a combination of the state followed by the category
 	 */
 	@Override
 	public String toString() {
 		return String.format("%s %s", this.getState(), this.getCategory().toLowerCase());
 	}
-
+}
